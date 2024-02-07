@@ -2,7 +2,7 @@ package ash.jdbc.service;
 
 import ash.jdbc.domain.Member;
 import ash.jdbc.repository.MemberRepository;
-import ash.jdbc.repository.MemberRepositoryV4_1;
+import ash.jdbc.repository.MemberRepositoryV4_2;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
@@ -45,7 +45,8 @@ class MemberServiceV4Test {
 
         @Bean
         MemberRepository memberRepository() {
-            return new MemberRepositoryV4_1(dataSource); // MemberRepository에 대한 구현체 등록, 단순 예외 변환
+//            return new MemberRepositoryV4_1(dataSource); // MemberRepository에 대한 구현체 등록, 단순 예외 변환
+            return new MemberRepositoryV4_2(dataSource);
         }
 
         @Bean
